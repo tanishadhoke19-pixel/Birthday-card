@@ -1,64 +1,79 @@
 function openCard(){
 
   document
-    .getElementById("card")
-    .classList.add("show");
+  .getElementById("card")
+  .classList.add("show");
+
+  document
+  .querySelector(".envelope")
+  .style.display="none";
 
   createConfetti();
 }
 
+/* CONFETTI */
+
 function createConfetti(){
 
-  for(let i=0;i<80;i++){
+  let emojis=["🎉","✨","💙","🧸","🍫"];
+
+  for(let i=0;i<120;i++){
 
     let conf=document.createElement("div");
 
-    conf.innerHTML="🎉";
+    conf.innerHTML=
+    emojis[Math.floor(
+    Math.random()*emojis.length)];
 
-    conf.classList.add("fall");
+    conf.classList.add("confetti");
 
-    conf.style.left=Math.random()*100+"vw";
+    conf.style.left=
+    Math.random()*100+"vw";
 
     conf.style.fontSize=
-      (20+Math.random()*20)+"px";
+    (20+Math.random()*30)+"px";
 
     conf.style.animationDuration=
-      (2+Math.random()*3)+"s";
+    (3+Math.random()*4)+"s";
 
     document.body.appendChild(conf);
 
     setTimeout(()=>{
       conf.remove();
-    },5000);
+    },7000);
   }
 }
+
+/* GLITTER EVERYWHERE */
 
 document
 .getElementById("title")
 .addEventListener("click",()=>{
 
-  for(let i=0;i<40;i++){
+  for(let i=0;i<150;i++){
 
-    let sparkle=document.createElement("div");
+    let sparkle=
+    document.createElement("div");
 
     sparkle.innerHTML="✨";
 
     sparkle.style.position="absolute";
 
     sparkle.style.left=
-      (window.innerWidth/2+
-      Math.random()*250-125)+"px";
+    Math.random()*100+"vw";
 
     sparkle.style.top=
-      (window.innerHeight/2+
-      Math.random()*120-60)+"px";
+    Math.random()*100+"vh";
 
-    sparkle.style.fontSize="25px";
+    sparkle.style.fontSize=
+    (15+Math.random()*25)+"px";
+
+    sparkle.style.pointerEvents="none";
 
     document.body.appendChild(sparkle);
 
     setTimeout(()=>{
       sparkle.remove();
-    },2000);
+    },2500);
   }
 });
