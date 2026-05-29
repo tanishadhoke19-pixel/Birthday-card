@@ -1,0 +1,74 @@
+body{
+  margin:0;
+  overflow:hidden;
+  background:linear-gradient(#ffd6e7,#fff);
+  font-family:Arial;
+  text-align:center;
+}
+
+.envelope{
+  font-size:110px;
+  margin-top:220px;
+  cursor:pointer;
+  animation:bounce 2s infinite;
+}
+
+.card{
+  width:340px;
+  background:white;
+  padding:30px;
+  border-radius:25px;
+
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,200%);
+  opacity:0;
+
+  transition:1s;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.show{
+  transform:translate(-50%,-50%);
+  opacity:1;
+}
+
+h1{
+  color:#ff4f8b;
+  cursor:pointer;
+}
+
+.teddy,.choco{
+  width:100px;
+  margin:10px;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+.fall{
+  position:absolute;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-10vh);
+  }
+
+  to{
+    transform:translateY(110vh);
+  }
+}
